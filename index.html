@@ -9,9 +9,8 @@
 <body>
     
     <div class="inp_area">
-        <label for="date">Date</label>
-        <input type="date" data-placeholder="22-12-15 D" id="date" required>
-        <input type="date" data-placeholder="22-12-15 D" id="date" required>
+        <input type="date" data-placeholder="22. 11. 01 화" id="date" required>
+        <input type="date" data-placeholder="22. 12. 04 화" id="date" required>
     </div>
     <style>
         body {
@@ -27,8 +26,9 @@
             outline: none;
             -webkit-appearance: none;
             border: none;
+            color: transparent;
             background-color: transparent;
-            
+
         }
         input[type="date"]::-webkit-clear-button,
         input[type="date"]::-webkit-inner-spin-button {display: none}
@@ -47,7 +47,7 @@
             content: attr(data-placeholder);
             width: 100%;
         }
-
+      
         input[type="date"]:valid::before {
             display: none;
         }
@@ -58,10 +58,20 @@
         }
 
         .inp_area {
-            border: 1px solid #bababa;
+            border: 1px solid #eceef4;
             width: max-content;
-            border-radius: 15px;
+            border-radius: 5px;
         }
     </style>
+
+    <script>
+        const input = document.getElementById('date');
+        input.addEventListener('change', function() {
+            const oldValue = input.value.split('-').join('. ');
+            console.log(oldValue)
+            input.dataset.placeholder = `${oldValue} 화`;
+            input.value = ''
+        })
+    </script>
 </body>
 </html>
