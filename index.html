@@ -10,7 +10,7 @@
     
     <div class="inp_area">
         <input type="date" data-placeholder="22. 11. 01 화" id="date" required>
-        <input type="date" data-placeholder="22. 12. 04 화" id="date" required>
+        <input type="date" data-placeholder="00:00 AM" id="date" required>
     </div>
     <style>
         body {
@@ -66,11 +66,11 @@
 
     <script>
         const input = document.getElementById('date');
-        input.addEventListener('change', function() {
-            const oldValue = input.value.split('-').join('. ');
-            console.log(oldValue)
-            input.dataset.placeholder = `${oldValue} 화`;
-            input.value = ''
+
+        input.addEventListener('input', function() {
+            const currentValue = input.value.split('-').join('. ').slice(2);
+            input.dataset.placeholder = `${currentValue} 화`;
+            input.value = '';
         })
     </script>
 </body>
