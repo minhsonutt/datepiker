@@ -7,19 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="date">Date</label>
-    <input type="date" data-placeholder="22-12-15 Day" id="date" required>
+    
+    <div class="inp_area">
+        <label for="date">Date</label>
+        <input type="date" data-placeholder="22-12-15 D" id="date" required>
+        <input type="date" data-placeholder="22-12-15 D" id="date" required>
+    </div>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         input[type="date"]{
             position: relative;
-            width: 100px;
+            width: 120px;
             height: 48px;
             padding: 0 12px 0 12px;
             border: 1px solid #e1e1e1;
             border-radius: 12px;
+            outline: none;
+            -webkit-appearance: none;
+            border: none;
+            background-color: transparent;
+            
         }
         input[type="date"]::-webkit-clear-button,
-        input[type="date"]::-webkit-inner-spin-button {display: none;}
+        input[type="date"]::-webkit-inner-spin-button {display: none}
         input[type="date"]::-webkit-calendar-picker-indicator{
             position: absolute;
             left: 0;
@@ -45,6 +57,11 @@
             font-size: 14px;
         }
 
+        .inp_area {
+            border: 1px solid #bababa;
+            width: max-content;
+            border-radius: 15px;
+        }
     </style>
 </body>
 </html>
